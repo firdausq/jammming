@@ -1,0 +1,27 @@
+.track {
+    width: 300px;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 10px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+.artist {
+    font-size: 20px;
+    color: black;
+}
+
+.button {
+    background-color: white;
+    border: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50px;
+}
