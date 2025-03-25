@@ -1,0 +1,26 @@
+/* Playlist.css */
+.Playlist {
+  background-color: rgba(40, 21, 65, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+    width: 45%;
+    box-sizing: border-box;
+  }
+  
+  .Playlist input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+  }
+  
+  .Playlist-save {
+    background-color: #a259ff;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  

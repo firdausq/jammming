@@ -1,0 +1,23 @@
+/* SearchBar.css */
+.SearchBar {
+    margin: 20px 0;
+  }
+  
+  .SearchBar input {
+    width: 300px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 4px;
+  }
+  
+  .SearchButton {
+    margin-left: 10px;
+    padding: 8px 16px;
+    background-color: #a259ff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  

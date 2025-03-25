@@ -1,0 +1,14 @@
+/* SearchResults.css */
+.SearchResults {
+  background-color: rgba(40, 21, 65, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+    width: 45%;
+    box-sizing: border-box;
+  }
+  
+  .SearchResults h2 {
+    margin-top: 0;
+  }
+  
