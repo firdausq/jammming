@@ -4,7 +4,6 @@ const redirectUri = 'https://jammming-fq.netlify.app'; // oder deine echte URL
 const scopes = 'playlist-modify-public playlist-modify-private';
 
 let accessToken = '';
-let expiresIn;
 
 const Spotify = {
 
