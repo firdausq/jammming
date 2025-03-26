@@ -1,12 +1,14 @@
+// src/components/SearchResults/SearchResults.js
 import React from 'react';
 import './SearchResults.css';
 import TrackList from '../TrackList/TrackList';
 
-function SearchResults() {
+function SearchResults({ searchResults, onAdd }) {
   return (
     <div className="SearchResults">
       <h2>Results</h2>
-      <TrackList />
+      {/* Übergibt die Track-Daten und die onAdd-Funktion an die TrackList */}
+      <TrackList tracks={searchResults} onAdd={onAdd} />
     </div>
   );
 }

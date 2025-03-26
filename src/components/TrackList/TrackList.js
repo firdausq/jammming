@@ -1,16 +1,19 @@
+// src/components/TrackList/TrackList.js
 import React from 'react';
 import './TrackList.css';
 import Track from '../Track/Track';
 
-function TrackList() {
-  // Später kannst du hier ein Array von Tracks über Props bekommen
-  // und für jeden Track ein <Track /> rendern.
+function TrackList({ tracks, onAdd, onRemove }) {
   return (
     <div className="TrackList">
-      {/* Beispielhaft drei Tracks */}
-      <Track />
-      <Track />
-      <Track />
+      {tracks.map(track => (
+        <Track
+          key={track.id}        // Wichtig: Eindeutiger Schlüssel für jedes Element
+          track={track}         // Übergibt die Daten des einzelnen Tracks
+          onAdd={onAdd}         // Callback, falls der Track hinzugefügt werden soll
+          onRemove={onRemove}   // Callback, falls der Track entfernt werden soll
+        />
+      ))}
     </div>
   );
 }

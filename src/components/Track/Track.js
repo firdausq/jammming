@@ -1,16 +1,37 @@
+// src/components/Track/Track.js
 import React from 'react';
 import './Track.css';
 
-function Track() {
-  // Später kannst du hier z.B. Props für Name, Artist und Album entgegennehmen
-  // und den Button je nach Kontext (+ / -) rendern.
+function Track({ track, onAdd, onRemove }) {
+  // Ruft den entsprechenden Callback mit den Track-Daten auf
+  const addTrack = () => {
+    if (onAdd) {
+      onAdd(track);
+    }
+  };
+
+  const removeTrack = () => {
+    if (onRemove) {
+      onRemove(track);
+    }
+  };
+
+  // Rendert den passenden Aktions-Button
+  const renderAction = () => {
+    if (onAdd) {
+      return <button className="Track-action" onClick={addTrack}>+</button>;
+    } else if (onRemove) {
+      return <button className="Track-action" onClick={removeTrack}>–</button>;
+    }
+  };
+
   return (
     <div className="Track">
       <div className="Track-information">
-        <h3>Track Name</h3>
-        <p>Artist | Album</p>
+        <h3>{track.name}</h3>
+        <p>{track.artist} | {track.album}</p>
       </div>
-      <button className="Track-action">+</button>
+      {renderAction()}
     </div>
   );
 }

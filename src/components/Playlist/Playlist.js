@@ -1,16 +1,25 @@
+// src/components/Playlist/Playlist.js
 import React from 'react';
 import './Playlist.css';
 import TrackList from '../TrackList/TrackList';
 
-function Playlist() {
+function Playlist({ playlistName, playlistTracks, onNameChange, onRemove, onSave }) {
+  // Handler, um den Playlist-Namen zu aktualisieren
+  const handleNameChange = (e) => {
+    onNameChange(e.target.value);
+  };
+
   return (
     <div className="Playlist">
-      <h2>New Playlist</h2>
-      {/* TrackList für die Playlist */}
-      <TrackList />
-
-      <input defaultValue="New Playlist" />
-      <button className="Playlist-save">SAVE TO SPOTIFY</button>
+      <input 
+        value={playlistName}
+        onChange={handleNameChange}
+      />
+      {/* Übergibt die Playlist-Tracks und die Funktion zum Entfernen an die TrackList */}
+      <TrackList tracks={playlistTracks} onRemove={onRemove} />
+      <button className="Playlist-save" onClick={onSave}>
+        SAVE TO SPOTIFY
+      </button>
     </div>
   );
 }
