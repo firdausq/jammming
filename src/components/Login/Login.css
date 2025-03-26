@@ -1,0 +1,9 @@
+.Login-Button {
+    background-color: #a259ff;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+  }
