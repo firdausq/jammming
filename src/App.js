@@ -1,7 +1,7 @@
 // src/App.js
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import MainApp from './MainApp'; // Die eigentliche App, die vorherige Funktionalität enthält
+import MainApp from './MainApp';
 import Login from './components/Login/Login';
 import Spotify from './spotifyService';
 
@@ -10,13 +10,20 @@ function App() {
 
   useEffect(() => {
     const hash = window.location.hash;
-    if (hash) {
-      const params = new URLSearchParams(hash.substring(1));
-      const accessToken = params.get('access_token');
-      if (accessToken) {
-        setToken(accessToken);
-        Spotify.setAccessToken(accessToken); // <--- Wichtig!
-        window.history.pushState("", document.title, window.location.pathname);
+    const params = new URLSearchParams(hash.substring(1));
+    const accessToken = params.get('access_token');
+  
+    if (accessToken) {
+      setToken(accessToken);
+      Spotify.setAccessToken(accessToken);
+      sessionStorage.setItem('spotify_token', accessToken); // ← speichern
+      window.history.pushState("", document.title, window.location.pathname);
+    } else {
+      // Token aus Session laden (z. B. beim Refresh)
+      const savedToken = sessionStorage.getItem('spotify_token');
+      if (savedToken) {
+        setToken(savedToken);
+        Spotify.setAccessToken(savedToken);
       }
     }
   }, []);
@@ -24,7 +31,8 @@ function App() {
 
   return (
     <div className="App">
-      {token ? <MainApp token={token} /> : <Login />}
+      {/* Nur wenn Token vorhanden ist, wird MainApp gerendert */}
+      {token ? <MainApp /> : <Login />}
     </div>
   );
 }
