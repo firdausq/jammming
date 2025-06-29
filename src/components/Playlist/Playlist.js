@@ -1,4 +1,3 @@
-// src/components/Playlist/Playlist.js
 import React from 'react';
 import './Playlist.css';
 import TrackList from '../TrackList/TrackList';

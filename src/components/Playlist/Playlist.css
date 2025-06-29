@@ -1,4 +1,3 @@
-/* Playlist.css */
 .Playlist {
   background-color: rgba(40, 21, 65, 0.8);
     padding: 20px;
@@ -24,3 +23,8 @@
     font-weight: bold;
   }
   
+  @media only screen and (max-width: 750px) {
+    .Playlist {
+      width: 100%;
+    }
+  }

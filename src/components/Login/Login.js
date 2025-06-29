@@ -1,4 +1,3 @@
-// src/components/Login/Login.js
 import React from 'react';
 import './Login.css';
 import Spotify from '../../spotifyService';

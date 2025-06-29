@@ -1,6 +1,5 @@
-// src/spotifyService.js
 const clientId = '202753dde01e42b0a8f0ba075bf62b5e';
-const redirectUri = 'https://jammming-fq.netlify.app'; // oder deine echte URL
+const redirectUri = 'https://jammming-fq.netlify.app';
 const scopes = 'playlist-modify-public playlist-modify-private';
 
 let accessToken = '';
@@ -19,7 +18,7 @@ const Spotify = {
     window.location = authUrl;
   },
 
-  // Beispiel-Funktion: Suche nach Tracks
+  //Suche nach Tracks
   search(term) {
     const token = this.getAccessToken(); // Stellt sicher, dass wir ein Token haben
     return fetch(`https://api.spotify.com/v1/search?type=track&q=${encodeURIComponent(term)}`, {
@@ -40,7 +39,7 @@ const Spotify = {
       });
   },
 
-  // Beispiel-Funktion: Neue Playlist anlegen und Tracks hinzufügen
+  //Neue Playlist anlegen und Tracks hinzufügen
   savePlaylist(playlistName, trackUris) {
     if (!playlistName || !trackUris.length) {
       return;
